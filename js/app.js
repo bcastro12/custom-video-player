@@ -14,16 +14,13 @@ window.onload = () => {
     vid.addEventListener("play", () => (btnplaypause.className = "fa fa-pause"));
 
     // video duration / progress bar / tooltip
-    vid.addEventListener("loadedmetadata", (event) => {
-        console.log("loadedmetadata");
-        document.getElementById("total-time").innerHTML = " / " + convertTime(parseInt(vid.duration));
+    document.getElementById("total-time").innerHTML = " / " + convertTime(parseInt(vid.duration));
 
-        vidTime = setInterval(function () {
-            document.getElementById("current-time").innerHTML = convertTime(parseInt(vid.currentTime));
-            let curTime = (vid.currentTime * 100) / vid.duration;
-            progressbarfill.style.width = `${curTime}%`;
-        }, 100);
-    });
+    vidTime = setInterval(function () {
+        document.getElementById("current-time").innerHTML = convertTime(parseInt(vid.currentTime));
+        let curTime = (vid.currentTime * 100) / vid.duration;
+        progressbarfill.style.width = `${curTime}%`;
+    }, 100);
 
     progressbar.addEventListener("click", (e) => {
         let totalSize = progressbar.offsetWidth;
