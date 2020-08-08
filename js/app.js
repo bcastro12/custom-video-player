@@ -14,12 +14,12 @@ window.onload = () => {
     vid.addEventListener("play", () => (btnplaypause.className = "fa fa-pause"));
 
     // video duration / progress bar / tooltip
-    document.getElementById("total-time").innerHTML = " / " + convertTime(parseInt(vid.duration));
 
     vidTime = setInterval(function () {
         document.getElementById("current-time").innerHTML = convertTime(parseInt(vid.currentTime));
         let curTime = (vid.currentTime * 100) / vid.duration;
         progressbarfill.style.width = `${curTime}%`;
+        document.getElementById("total-time").innerHTML = " / " + convertTime(parseInt(vid.duration));
     }, 100);
 
     progressbar.addEventListener("click", (e) => {
