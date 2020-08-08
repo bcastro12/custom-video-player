@@ -18,7 +18,9 @@
         <div class="container">
             <div class="c-video">
                 <div class="video-container">
-                    <video id="video" src="./video.mp4"></video>
+                    <video id="video" preload="metadata">
+                        <source src="./video.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <div class="over"></div>
                 <div class="bar">
@@ -42,8 +44,8 @@
                                 </div>
                             </div>
                             <div class="duration">
-                                <span id="current-time">432</span>
-                                <span id="total-time">432</span>
+                                <span id="current-time">0:00</span>
+                                <span id="total-time">/ 0:00</span>
                             </div>
                         </div>
                         <div class="right-controls">
