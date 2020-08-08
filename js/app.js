@@ -7,6 +7,7 @@ window.onload = () => {
     const progressbar = document.getElementsByClassName("progressbar")[0];
     const progressbarfill = document.getElementsByClassName("progressbar-fill")[0];
 
+    console.log(vid.duration);
     // play/pause
     document.getElementById("play").addEventListener("click", playpause);
     vid.addEventListener("click", playpause);
