@@ -15,6 +15,7 @@ window.onload = () => {
 
     // video duration / progress bar / tooltip
     vid.addEventListener("loadedmetadata", (event) => {
+        console.log("loadedmetadata");
         document.getElementById("total-time").innerHTML = " / " + convertTime(parseInt(vid.duration));
 
         vidTime = setInterval(function () {
