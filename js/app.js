@@ -14,7 +14,7 @@ window.onload = () => {
     vid.addEventListener("play", () => (btnplaypause.className = "fa fa-pause"));
 
     // video duration / progress bar / tooltip
-    vid.addEventListener("loadedmetadata", () => {
+    vid.addEventListener("loadedmetadata", (event) => {
         document.getElementById("total-time").innerHTML = " / " + convertTime(parseInt(vid.duration));
 
         vidTime = setInterval(function () {
