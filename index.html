@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Custom Video Player</title>
+
+        <link rel="stylesheet" href="./css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous"
+        />
+        <script src="js/app.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="c-video">
+                <div class="video-container">
+                    <video id="video" src="./video.mp4"></video>
+                </div>
+                <div class="over"></div>
+                <div class="bar">
+                    <div class="progressbar">
+                        <div class="progressbar-fill"></div>
+                        <div class="progressbar-empty"></div>
+                        <div class="tooltip"></div>
+                    </div>
+
+                    <div class="controls">
+                        <div class="left-controls">
+                            <div class="btn-play" id="play">
+                                <i id="play-icon" class="fa fa-play"></i>
+                            </div>
+                            <div class="volume-control">
+                                <div id="btn-volume">
+                                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                                </div>
+                                <div class="volume-slider-container">
+                                    <input type="range" id="volume-slider" class="volume-slider" min="0" max="10" step="0.2" value="5" />
+                                </div>
+                            </div>
+                            <div class="duration">
+                                <span id="current-time">432</span>
+                                <span id="total-time">432</span>
+                            </div>
+                        </div>
+                        <div class="right-controls">
+                            <div id="btn-max" class="btn-max">
+                                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #3630b1, #fb6485);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.c-video {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px 2px black;
+}
+.video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#video {
+    width: 100%;
+    position: relative;
+    margin-bottom: -5px;
+}
+.over {
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 40, 80, 0.8);
+    position: absolute;
+    z-index: 4;
+    display: block;
+}
+.c-video:hover .bar {
+    transform: translate(0, -32px);
+    transition: linear 0.1s;
+    background-color: rgba(19, 40, 80, 0.7);
+}
+
+.bar {
+    margin-top: -6px;
+    width: 100%;
+    height: 100%;
+    max-height: 40px;
+    background-color: rgba(0, 89, 255, 0.5);
+    position: absolute;
+}
+.progressbar {
+    height: 6px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.progressbar-fill {
+    height: 6px;
+    width: 100%;
+    background-color: rgb(255, 208, 0);
+    position: absolute;
+    z-index: 2;
+    transition: linear 0.1s;
+}
+.progressbar-empty {
+    height: 6px;
+    width: 100%;
+    background-color: rgb(77, 77, 77);
+    position: absolute;
+    float: left;
+}
+.progressbar:hover .tooltip {
+    background-color: rgba(92, 92, 92, 0.7);
+    position: relative;
+    transform: translate(0, -32px);
+    display: block;
+}
+.tooltip {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(54, 54, 54, 0.7);
+    display: none;
+    text-align: center;
+    padding: 2px 3px 2px 3px;
+    font-size: 12px;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+.controls {
+    font-size: 20px;
+    color: whitesmoke;
+}
+.left-controls {
+    float: left;
+}
+.right-controls {
+    float: right;
+}
+.btn-play,
+.volume-control,
+.btn-max {
+    cursor: pointer;
+}
+.btn-play {
+    align-items: flex-start;
+    padding: 6px 30px 0 30px;
+    float: left;
+}
+#btn-volume {
+    width: 24px;
+}
+.volume-control {
+    margin: 4px 0 0;
+    font-size: 24px;
+    float: left;
+    display: flex;
+}
+.volume-control:hover .volume-slider {
+    margin-left: 10px;
+    transition: ease 0.2s;
+    appearance: none;
+    background: whitesmoke;
+    outline: none;
+}
+.volume-control:hover .volume-slider::-webkit-slider-runnable-track {
+    height: 11px;
+}
+.volume-control:hover .volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 12px;
+    background: whitesmoke;
+}
+#range {
+    overflow: hidden;
+    width: 100%;
+    -webkit-appearance: none;
+    background-color: #9a905d;
+    outline: none;
+}
+#range::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #13bba4;
+    margin-top: -1px;
+}
+#range::-webkit-slider-thumb {
+    width: 10px;
+    -webkit-appearance: none;
+    height: 10px;
+    cursor: ew-resize;
+    background: #434343;
+    box-shadow: -80px 0 0 80px #43e5f7;
+}
+
+.volume-slider-container {
+    overflow: hidden;
+}
+.volume-slider {
+    height: 4px;
+    width: 70px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    float: left;
+    margin: 11px 0 0 10px;
+    margin-left: -70px;
+    cursor: pointer;
+}
+.duration {
+    font-size: 14px;
+    float: left;
+    padding: 9px 30px 0 30px;
+}
+
+.btn-max {
+    float: right;
+    padding: 6px 30px 0 30px;
+}
