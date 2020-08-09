@@ -34,7 +34,13 @@ window.onload = () => {
         let totalSize = progressbar.offsetWidth;
         let rect = e.target.getBoundingClientRect();
         let x = e.clientX - rect.left;
-        tooltip.style.left = x - 0.5 * tooltip.offsetWidth + "px";
+        let val = x - 0.5 * tooltip.offsetWidth;
+        tooltip.style.left = val + "px";
+        if (val < 0) {
+            tooltip.style.left = "0px";
+        } else if (x > totalSize - 0.5 * tooltip.offsetWidth - 4) {
+            tooltip.style.left = totalSize - tooltip.offsetWidth - 4 + "px";
+        }
         tooltip.innerHTML = convertTime(parseInt((vid.duration * x) / totalSize));
     });
 
