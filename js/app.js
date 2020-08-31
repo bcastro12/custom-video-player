@@ -74,10 +74,25 @@ function playpause() {
 }
 
 function toggleMax() {
-    if (document.fullscreenElement) {
-        document.exitFullscreen();
+    // if (document.fullscreenElement) {
+    //     document.exitFullscreen();
+    // } else {
+    //     document.getElementsByClassName("c-video")[0].webkitRequestFullScreen();
+    // }
+
+    if (!document.fullscreenElement) {
+        var docElm = document.getElementsByClassName("c-video")[0];
+        if (docElm.requestFullscreen) {
+            docElm.requestFullscreen();
+        } else if (docElm.mozRequestFullScreen) {
+            docElm.mozRequestFullScreen();
+        } else if (docElm.webkitRequestFullScreen) {
+            docElm.webkitRequestFullScreen();
+        } else if (docElm.msRequestFullscreen) {
+            docElm.msRequestFullscreen();
+        }
     } else {
-        document.getElementsByClassName("c-video")[0].webkitRequestFullScreen();
+        document.exitFullscreen();
     }
 }
 
@@ -94,5 +109,4 @@ function changeVolume() {
     } else {
         btnvolume.children[0].className = "fa fa-volume-up";
     }
-    console.log(typeof volumeslider.value);
 }
